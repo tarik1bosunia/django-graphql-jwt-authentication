@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', # Required for GraphiQL
     
     # graphql
+    'django_filters',
     "graphene_django",
     "graphql_jwt.refresh_token.apps.RefreshTokenConfig",
+    "graphql_auth",
 
     
     # custom apps
@@ -140,7 +142,9 @@ GRAPHENE = {
     ],
 }
 AUTHENTICATION_BACKENDS = [
-    "graphql_jwt.backends.JSONWebTokenBackend",
+    # "graphql_jwt.backends.JSONWebTokenBackend",
+    "graphql_auth.backends.GraphQLAuthBackend",
     "django.contrib.auth.backends.ModelBackend",
+
 ]
 # ======================== GRAPHQL END===========================

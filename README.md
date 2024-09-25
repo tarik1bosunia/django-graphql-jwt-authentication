@@ -20,3 +20,23 @@ pip install graphene-django
 pip install django-graphql-jwt
 pip freeze > requirements.txt
 ```
+
+```sh
+https://django-graphql-auth.readthedocs.io/en/latest/api/
+pip install django-graphql-auth --no-deps
+```
+
+```code
+query{
+  users{
+    edges{
+      node{
+        username
+        firstName
+        lastName
+        email
+      }
+    }
+  }
+}
+```
